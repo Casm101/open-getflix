@@ -1,5 +1,15 @@
+@import './variables.scss';
+
 * {
+  // Reset stylings
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
+  // Font stylings
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: $white-primary;
 }

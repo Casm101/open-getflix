@@ -1,9 +1,70 @@
+@import './variables.scss';
+
 .appView {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 
   height: 100dvh;
   width: 100dvw;
+
+  background: $black-primary;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttonStyled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 48px;
+  padding: 0 14px;
+
+  background: $black-secondary;
+  border: 1px solid $grey-primary;
+  border-radius: $border-radius-m;
+
+  transition-property: background, border-color;
+  transition-duration: .25s;
+  transition-timing-function: ease;
+
+  cursor: pointer;
+
+  &:hover {
+    background: $black-terciary;
+  }
+
+  &.secondary {
+    background: $white-primary;
+    border-color: $white-primary;
+
+    .buttonContent {
+      color: $black-secondary;
+    }
+
+    &:hover {
+      background: $white-secondary;
+      border-color: $white-secondary;
+    }
+  }
+
+  .buttonContent {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0 6px;
+
+    color: #FFF;
+
+    font-size: $button-font-size;
+    font-weight: 500;
+  }
 }

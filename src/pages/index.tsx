@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { cn } from '@/utils';
 import { useState } from 'react';
 import { LoginResponse } from './types';
 
@@ -27,7 +28,16 @@ export default function Home() {
 
       <div className={styles.appView}>
         <input type="text" onChange={e => setApiKey(e.target.value)} />
-        <button onClick={login}>Log-in</button>
+
+        <div className={styles.buttonContainer}>
+          <button className={cn([styles.buttonStyled, styles.secondary])} onClick={login}>
+            <span className={styles.buttonContent}>Sign Up</span>
+          </button>
+
+          <button className={styles.buttonStyled} onClick={login}>
+            <span className={styles.buttonContent}>Log in</span>
+          </button>
+        </div>
 
         {userData && (
           <>
